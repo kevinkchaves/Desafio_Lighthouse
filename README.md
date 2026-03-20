@@ -6,11 +6,11 @@ O desenvolvimento abrange desde a engenharia de dados e modelagem SQL até a imp
 
 ### Tecnologias e Ferramentas
 
-Linguagem: Python 3.10+
-Processamento de Dados: Pandas, NumPy
-Banco de Dados: SQL (PostgreSQL)
-Ciência de Dados: Scikit-Learn (Cosine Similarity, MAE)
-Consumo de API: API do Banco Central (Câmbio)
+- Linguagem: Python 3.10+
+- Processamento de Dados: Pandas, NumPy
+- Banco de Dados: SQL (PostgreSQL)
+- Ciência de Dados: Scikit-Learn (Cosine Similarity, MAE)
+- Consumo de API: API do Banco Central (Câmbio)
 
 ### Estrutura do Projeto
 
