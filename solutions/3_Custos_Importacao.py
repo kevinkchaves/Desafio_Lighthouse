@@ -52,6 +52,8 @@ df_custos_importacao['usd_price'] = pd.to_numeric(df_custos_importacao['usd_pric
 
 print(f"\nTipos de dados convertidos:{df_custos_importacao.dtypes}")
 print(df_custos_importacao.head(3))
+print(df_custos_importacao.shape)
+
 
 # SALVANDO EM CSV
 df_custos_importacao.to_csv('./data/processed/custos_importacao.csv', index=False)
