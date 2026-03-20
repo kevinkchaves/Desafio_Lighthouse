@@ -17,7 +17,7 @@ import pandas as pd
 from datetime import datetime
 
 # CARREGANDO O DATASET
-df = pd.read_csv('../data/raw/vendas_2023_2024.csv')
+df = pd.read_csv('./data/raw/vendas_2023_2024.csv')
 print(f"Linhas: {df.shape[0]} Colunas: {df.shape[1]}")
 
 # CONFERINDO AS DATAS
