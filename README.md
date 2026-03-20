@@ -35,21 +35,21 @@ A entrega foi dividida em frentes estratégicas para cobrir toda a jornada de da
 8_Sistema_Recomendação: Algoritmo de similaridade de cosseno para sugestão de produtos complementares.
 
 ### Principais Insights e Resultados
-
+```text
+[BREVE]
+```
 
 ### Organização do Repositório
 
+```text
 DESAFIO_LIGHTHOUSE
 ├── data/
 │   ├── raw/
-│   │   ├── clientes_crm.json         
-│   │   ├── custos_importacao.json    
+│   │   ├── clientes_crm.json
+│   │   ├── custos_importacao.json
 │   │   ├── produtos_raw.csv
 │   │   └── vendas_2023_2024.csv
 │   └── processed/
-│       ├──
-│       ├──
-│       └──
 ├── notebooks/
 │   ├── 1_EDA.ipynb
 │   ├── 2_Produtos.ipynb
@@ -60,9 +60,7 @@ DESAFIO_LIGHTHOUSE
 │   ├── 7_Previsao_Demanda.ipynb
 │   └── 8_Sistema_Recomendacao.ipynb
 ├── scripts/
-│   └──
 ├── sql/
-│   └── 
 └── README.md
 
 
@@ -78,4 +76,4 @@ Execute os scripts na ordem numérica das questões.
 ### Contato
 
 Desenvolvido por Kevin K. Chaves
-Linkedin: www.linkedin.com/in/kevinkrchaves
+- Linkedin: www.linkedin.com/in/kevinkrchaves
