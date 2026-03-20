@@ -5,6 +5,7 @@ O projeto consiste em transformar o caos dos dados da empresa LH Nautical (varej
 O desenvolvimento abrange desde a engenharia de dados e modelagem SQL até a implementação de inteligência preditiva e sistemas de recomendação.
 
 ### Tecnologias e Ferramentas
+
 Linguagem: Python 3.10+
 
 Processamento de Dados: Pandas, NumPy
@@ -16,6 +17,7 @@ Ciência de Dados: Scikit-Learn (Cosine Similarity, MAE)
 Consumo de API: API do Banco Central (Câmbio)
 
 ### Estrutura do Projeto
+
 A entrega foi dividida em frentes estratégicas para cobrir toda a jornada de dados:
 
 1_EDA: Diagnóstico de registros para validar a confiabilidade da base.
@@ -62,16 +64,17 @@ DESAFIO_LIGHTHOUSE
 ├── scripts/
 ├── sql/
 └── README.md
-
+```
 
 ### Como Executar
-Clone o repositório.
 
-Instale as dependências: pip install -r requirements.txt.
+- Clone o repositório.
 
-Para a análise financeira, certifique-se de ter acesso à internet para o consumo da API do Banco Central.
+- Instale as dependências: pip install -r requirements.txt.
 
-Execute os scripts na ordem numérica das questões.
+- Para a análise financeira, certifique-se de ter acesso à internet para o consumo da API do Banco Central.
+
+- Execute os scripts na ordem numérica das questões.
 
 ### Contato
 
