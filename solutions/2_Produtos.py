@@ -1,5 +1,15 @@
-'''QUESTÃO 2 - PRODUTOS
-O dataset de produtos apresenta uma coluna 'actual_category' que contém categorias de produtos, mas os dados estão inconsistentes, com variações de formatação e possíveis erros de digitação. Além disso, a coluna 'price' contém valores monetários que precisam ser convertidos para um formato numérico.'''
+'''
+QUESTÃO 2 - PRODUTOS
+
+Premissas obrigatórias:
+•	Utilizar apenas o CSV produtos_raw.csv
+•	Utilizar obrigatoriamente Python 3
+
+Tarefas: 
+1 — Padronizar os nomes das categorias de produtos (eletrônicos, propulsão e ancoragem);
+2 — Converter valores para o tipo numérico;
+3 — Remover as duplicatas.
+'''
 
 #IMPORTANDO BIBLIOTECA
 import pandas as pd
@@ -50,7 +60,7 @@ antes_remocao = len(df)
 df = df.drop_duplicates()
 depois_remocao = len(df)
 print(f"Registros removidos: {antes_remocao - depois_remocao}")
-print(f"Dataset: {depois_remocao} linhas normalizadas e sem duplicatas.")
+print(f"Dataset com {depois_remocao} linhas normalizadas e sem duplicatas.")
 
 #SALVANDO O DATASET NORMALIZADO
 df.to_csv('./data/processed/produtos_normalizados.csv', index=False)
