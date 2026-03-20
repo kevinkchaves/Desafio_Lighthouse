@@ -52,7 +52,7 @@ DESAFIO_LIGHTHOUSE
 │   │   ├── produtos_raw.csv
 │   │   └── vendas_2023_2024.csv
 │   └── processed/
-├── notebooks/
+├── solutions/
 │   ├── 1_EDA.ipynb
 │   ├── 2_Produtos.ipynb
 │   ├── 3_Custos_Importacao.ipynb
