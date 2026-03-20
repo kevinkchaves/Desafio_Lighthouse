@@ -7,13 +7,9 @@ O desenvolvimento abrange desde a engenharia de dados e modelagem SQL até a imp
 ### Tecnologias e Ferramentas
 
 Linguagem: Python 3.10+
-
 Processamento de Dados: Pandas, NumPy
-
 Banco de Dados: SQL (PostgreSQL)
-
 Ciência de Dados: Scikit-Learn (Cosine Similarity, MAE)
-
 Consumo de API: API do Banco Central (Câmbio)
 
 ### Estrutura do Projeto
@@ -51,18 +47,25 @@ DESAFIO_LIGHTHOUSE
 │   │   ├── custos_importacao.json
 │   │   ├── produtos_raw.csv
 │   │   └── vendas_2023_2024.csv
+│   │
 │   └── processed/
+│       └── produtos_normalizados.csv
+│   
+├── notebook/
+│    └── Relatorio.ipynb
+│
 ├── solutions/
-│   ├── 1_EDA.ipynb
-│   ├── 2_Produtos.ipynb
-│   ├── 3_Custos_Importacao.ipynb
+│   ├── 1_EDA.py
+│   ├── 2_Produtos.py
+│   ├── 3_Custos_Importacao.py
 │   ├── 4_Dados_Publicos.ipynb
 │   ├── 5_Analise_Clientes.ipynb
 │   ├── 6_Dimensao_Calendario.ipynb
 │   ├── 7_Previsao_Demanda.ipynb
 │   └── 8_Sistema_Recomendacao.ipynb
-├── scripts/
+│   
 ├── sql/
+│   
 └── README.md
 ```
 
