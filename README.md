@@ -42,31 +42,43 @@ A entrega foi dividida em frentes estratégicas para cobrir toda a jornada de da
 ```text
 DESAFIO_LIGHTHOUSE
 ├── data/
-│   ├── raw/
-│   │   ├── clientes_crm.json
-│   │   ├── custos_importacao.json
-│   │   ├── produtos_raw.csv
-│   │   └── vendas_2023_2024.csv
+│   ├── processed/
+│   │   ├── cambio.csv
+│   │   ├── custos_importacao.csv
+│   │   ├── dados_agregados.csv
+│   │   ├── produtos_normalizados.csv
+│   │   └── vendas_cambio_custos.csv
 │   │
-│   └── processed/
-│       └── produtos_normalizados.csv
+│   └── raw/
+│       ├── clientes_crm.json
+│       ├── custos_importacao.json
+│       ├── produtos_raw.csv
+│       └── vendas_2023_2024.csv
 │   
 ├── notebook/
-│    └── Relatorio.ipynb
+│   ├── plots/
+│   │   └── grafico_prejuizo.png
+│   │    
+│   └── Relatorio.ipynb
 │
 ├── solutions/
 │   ├── 1_EDA.py
 │   ├── 2_Produtos.py
 │   ├── 3_Custos_Importacao.py
-│   ├── 4_Dados_Publicos.ipynb
-│   ├── 5_Analise_Clientes.ipynb
-│   ├── 6_Dimensao_Calendario.ipynb
-│   ├── 7_Previsao_Demanda.ipynb
-│   └── 8_Sistema_Recomendacao.ipynb
+│   ├── 4_Dados_Publicos.py 
+│   ├── 5_Analise_Clientes.py   
+│   ├── 6_Dimensao_Calendario.py    
+│   ├── 7_Previsao_Demanda.py   
+│   └── 8_Sistema_Recomendacao.py   
 │   
 ├── sql/
+│   ├── Questao_01.sql
+│   ├── Questao_04.sql
+│   └── Questao_05.sql
 │   
-└── README.md
+├── README.md
+│   
+└── requirements.txt
 ```
 
 ### Como Executar
