@@ -73,8 +73,16 @@ df_vendas = pd.read_csv(os.path.join(PATH_RAW, 'vendas_2023_2024.csv'))
 df_custos = pd.read_csv(os.path.join(PATH_PROCESSED, 'custos_importacao.csv'))
 df_cambio = pd.read_csv(os.path.join(PATH_PROCESSED, 'cambio.csv')) 
 
-# PADRONIZANDO O FORMATO DAS DATAS
-df_vendas['sale_date'] = pd.to_datetime(df_vendas['sale_date'],format='mixed',dayfirst=True)
+#FORMATANDO A COLUNA sale_date PARA O FORMATO DE DATA, CONSIDERANDO OS DIFERENTES FORMATOS ENCONTRADOS
+def format_saledata(valor):
+    if not isinstance(valor, str): return valor
+    if valor[4] == '-': 
+        return pd.to_datetime(valor, format='%Y-%m-%d')
+    else:
+        return pd.to_datetime(valor, format='%d-%m-%Y')
+
+#PADRONIZANDO O FORMATO DAS DATAS
+df_vendas['sale_date'] = df_vendas['sale_date'].apply(format_saledata)
 df_custos['start_date'] = pd.to_datetime(df_custos['start_date'],format='mixed',dayfirst=True)
 df_cambio['cotacao_data'] = pd.to_datetime(df_cambio['cotacao_data'],format='mixed',dayfirst=True)
 
