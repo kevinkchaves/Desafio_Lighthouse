@@ -14,10 +14,15 @@ Tarefas:
 
 # IMPORTANDO BIBLIOTECAS
 import pandas as pd 
+import os
 from datetime import datetime
 
+# CONFIGURANDO PATHS
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PATH_VENDAS = os.path.join(BASE_DIR, '..', 'data', 'raw')
+
 # CARREGANDO O DATASET
-df = pd.read_csv('./data/raw/vendas_2023_2024.csv')
+df = pd.read_csv(os.path.join(PATH_VENDAS, 'vendas_2023_2024.csv'))
 print(f"Linhas: {df.shape[0]} Colunas: {df.shape[1]}")
 
 # CONFERINDO AS DATAS
@@ -69,7 +74,7 @@ valores_duplicados = df.duplicated().sum()
 print(f"Valores duplicados: {valores_duplicados}")
 
 #ANALISANDO FORMATOS DA COLUNA sale_date
-df['sale_date'].astype(str).str.replace(r'\d', 'X', regex=True).value_counts()
+print(df['sale_date'].astype(str).str.replace(r'\d', 'X', regex=True).value_counts())
 
 '''Os dados são de qualidade, não constando valores nulos, negativos ou duplicados. Entretanto, temos inconsistências no formato padrão de datas da coluna "sale_date", que apresenta dois tipos de configuração. 
 

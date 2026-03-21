@@ -13,9 +13,13 @@ Tarefas:
 
 #IMPORTANDO BIBLIOTECA
 import pandas as pd
+import os
 
 # CARREGANDO O DATASET
-df = pd.read_csv('./data/raw/produtos_raw.csv')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PATH_PRODUTOS = os.path.join(BASE_DIR, '..', 'data', 'raw')
+PATH_PROCESSED = os.path.join(BASE_DIR, '..', 'data', 'processed')
+df = pd.read_csv(os.path.join(PATH_PRODUTOS, 'produtos_raw.csv'))
 
 # EXIBINDO AS PRIMEIRAS LINHAS E INFORMAÇÕES DO DATASET
 print(df.head())
@@ -63,4 +67,4 @@ print(f"Registros removidos: {antes_remocao - depois_remocao}")
 print(f"Dataset com {depois_remocao} linhas normalizadas e sem duplicatas.")
 
 #SALVANDO O DATASET NORMALIZADO
-df.to_csv('./data/processed/produtos_normalizados.csv', index=False)
+df.to_csv(os.path.join(PATH_PROCESSED, 'produtos_normalizados.csv'), index=False)

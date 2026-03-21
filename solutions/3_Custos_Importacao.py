@@ -18,9 +18,14 @@ usd_price            float
 #IMPORTANDO BIBLIOTECAS
 import pandas as pd
 import json
+import os
 
 #CARREGANDO OS DADOS 
-with open('./data/raw/custos_importacao.json', 'r', encoding='utf-8') as arquivo_json:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PATH_RAW = os.path.join(BASE_DIR, '..', 'data', 'raw')
+PATH_PROCESSED = os.path.join(BASE_DIR, '..', 'data', 'processed')
+
+with open(os.path.join(PATH_RAW, 'custos_importacao.json'), 'r', encoding='utf-8') as arquivo_json:
     dados = json.load(arquivo_json)
 
 # DESANINHANDO JSON PARA CRIAR O DATAFRAME
@@ -56,4 +61,4 @@ print(df_custos_importacao.shape)
 
 
 # SALVANDO EM CSV
-df_custos_importacao.to_csv('./data/processed/custos_importacao.csv', index=False)
+df_custos_importacao.to_csv(os.path.join(PATH_PROCESSED, 'custos_importacao.csv'), index=False)
