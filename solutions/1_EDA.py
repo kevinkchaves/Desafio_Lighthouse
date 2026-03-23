@@ -57,7 +57,7 @@ top_outliers = outliers_ranking[['id_product', 'total']].head(10)
 print("Top 10 maiores outliers de vendas:")
 print(top_outliers)
 
-'''Os outliers significativos são os superiores com 1018 casos (cerca de 10% dos dados), que indicam valores  elevados acima dos 2 milhões, principalmente quandoo comparados às medidas de tendencia central deste dataframe. A média de 263 mil e a mediana 82 mil evidenciam a influência dos extremos de cima.\nAlém disso, só de observar o ranking dos 10 maiores outliers, percebemos mesmo produto (ID 76) aparecendo multiplas vezes entre os maiores, sendo que em quatro delas com o mesmo valor máximo de 2222973, o que pode nos indicar alguma anomalia, como talvez, registros duplicados.'''
+'''Os outliers significativos são os superiores com 1018 casos (cerca de 10% dos dados), que indicam valores  elevados acima dos 2 milhões, principalmente quandoo comparados às medidas de tendencia central deste dataframe. A média de 263 mil evidencia a influência dos extremos de cima.\nAlém disso, só de observar o ranking dos 10 maiores outliers, percebemos mesmo produto (ID 76) aparecendo multiplas vezes entre os maiores, sendo que em quatro delas com o mesmo valor máximo de R$ 2222973, o que pode nos indicar alguma anomalia, como talvez, registros duplicados.'''
 
 #ANALISANDO OUTLIERS SUSPEITOS
 outliers_suspeitos = df[(df['id_product'] == 76) & (df['total'] > 222900)]

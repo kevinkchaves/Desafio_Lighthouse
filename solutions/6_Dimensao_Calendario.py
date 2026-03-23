@@ -16,10 +16,13 @@ Tarefa:
 # IMPORTANDO BIBLIOTECAS
 import pandas as pd
 import os
+import matplotlib.pyplot as plt
+import seaborn as sns   
 
 # CONFIGURANDO PATHS
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PATH_VENDAS = os.path.join(BASE_DIR, '..', 'data', 'raw')
+PATH_PLOTS = os.path.join(BASE_DIR, '..', 'notebook', 'plots')
 
 df_vendas = pd.read_csv(os.path.join(PATH_VENDAS, 'vendas_2023_2024.csv'))
 
@@ -70,9 +73,41 @@ dias = {'Monday': 'Segunda-feira',
 df_analise['dia_semana'] = df_analise['data_referencia'].dt.day_name().map(dias)
 
 #CALCULO DA MÉDIA DE VENDAS POR DIA DA SEMANA
-media_diaria = df_analise.groupby('dia_semana')['total'].mean().reset_index()
+media_dia = df_analise.groupby('dia_semana')['total'].mean().reset_index()
 
 #IDENTIFICANDO O PIOR DIA DA SEMANA
-media_diaria = media_diaria.sort_values(by='total', ascending=True)
-print(media_diaria)
+media_dia = media_dia.sort_values(by='total', ascending=True)
+print(media_dia)
+
+
+#GERANDO GRÁFICO DE BARRAS PARA MÉDIA DE VENDAS POR DIA DA SEMANA
+media_dia['dia_semana'] = media_dia['dia_semana'].str.replace('-feira', '', regex=False)
+
+ordem = ['Domingo','Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
+
+plt.figure(figsize=(10, 6))
+sns.barplot(data=media_dia,
+            x='dia_semana',
+            y='total',
+            hue='dia_semana',
+            palette='Spectral',
+            legend=False,
+            order=ordem)
+
+plt.title('MÉDIA DE VENDAS POR DIA DA SEMANA', fontsize=14, fontweight='bold')
+plt.xlabel('DIA DA SEMANA', fontsize=12)
+plt.ylabel('MÉDIA (R$)', fontsize=12)
+
+def formatando(x, pos):
+    return f'R$ {x/1e6:.1f}M'
+
+plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(formatando))
+
+plt.title('MÉDIA DE VENDAS POR DIA DA SEMANA', fontsize=14, weight='bold')
+plt.xlabel('')
+plt.ylabel('MÉDIA')
+plt.xticks()
+plt.tight_layout()
+plt.savefig(os.path.join(PATH_PLOTS, 'grafico_media_dia.png'))
+plt.show()
 

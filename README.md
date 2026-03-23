@@ -46,6 +46,8 @@ DESAFIO_LIGHTHOUSE
 │   │   ├── cambio.csv
 │   │   ├── custos_importacao.csv
 │   │   ├── dados_agregados.csv
+│   │   ├── metricas_clientes.csv
+│   │   ├── previsao_ID54.csv
 │   │   ├── produtos_normalizados.csv
 │   │   └── vendas_cambio_custos.csv
 │   │
@@ -57,7 +59,9 @@ DESAFIO_LIGHTHOUSE
 │   
 ├── notebook/
 │   ├── plots/
-│   │   └── grafico_prejuizo.png
+│   │   ├── grafico_media_dia.png
+│   │   ├── grafico_prejuizo.png
+│   │   └── grafico_previsao_jan2024_ID54.png
 │   │    
 │   └── Relatorio.ipynb
 │
@@ -74,7 +78,8 @@ DESAFIO_LIGHTHOUSE
 ├── sql/
 │   ├── Questao_01.sql
 │   ├── Questao_04.sql
-│   └── Questao_05.sql
+│   ├── Questao_05.sql
+│   └── Questao_06.sql
 │   
 ├── README.md
 │   
