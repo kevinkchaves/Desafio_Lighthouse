@@ -20,8 +20,6 @@ FROM (
         END AS categoria_normalizada
     FROM vendas_2023_2024 v
     JOIN (
-        -- AQUI ESTÁ O SEGREDO: Agrupamos por código antes do JOIN
-        -- Isso garante que cada ID de produto conte apenas UMA VEZ
         SELECT code, MAX(actual_category) AS cat_bruta
         FROM produtos_raw
         GROUP BY code
