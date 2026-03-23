@@ -11,7 +11,12 @@ O projeto busca solucionar o caos de dados que tem prejudicado a varejista náut
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white) | ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) | ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) | ![Scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white) | ![Jupyter](https://img.shields.io/badge/Jupyter-F37626.svg?&style=for-the-badge&logo=Jupyter&logoColor=white) 
 
-## Estrutura do Projeto:
+## Visualização do Projeto:
+
+- Dashboard: Streamlit 
+- Notebook: Arquivo **Relatorio.ipynb** na pasta 'notebook'
+
+## Estrutura dos Soluções:
 
 A entrega foi dividida em frentes estratégicas para solucionar diversos aspectos do negócio.
 
@@ -74,7 +79,12 @@ DESAFIO_LIGHTHOUSE
 │   ├── Questao_04.sql
 │   ├── Questao_05.sql
 │   └── Questao_06.sql
-│   
+│ 
+├── streamlit/
+│   ├── img_navio.jpg
+│   ├── LH_logo.png
+│   └── main.py
+│
 ├── README.md
 │   
 └── requirements.txt

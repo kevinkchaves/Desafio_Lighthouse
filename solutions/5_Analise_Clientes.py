@@ -131,13 +131,20 @@ df_metricas.to_csv(os.path.join(PATH_PROCESSED, 'metricas_clientes.csv'), index=
 df_clientes_categorias = df_metricas[df_metricas['diversidade_categorias'] >= 3]
 print(f"Numero de clientes que compraram pelo menos 3 categorias: {df_clientes_categorias.shape[0]}")
 
-#SELECIONANDO OS 10 CLIENTES DE ELITE COM BASE NO TICKET MÉDIO
-top_10_clientes = df_metricas.sort_values(by=['ticket_medio', 'id_client'], ascending=[False, True]).head(10)
-top_10_clientes = top_10_clientes.sort_values(by='id_client', ascending=True)
+# RANKING DOS 10 CLIENTES COM MAIOR TICKET MÉDIO 
+top_10_clientes = df_clientes_categorias.sort_values(
+    by=['ticket_medio', 'id_client'], 
+    ascending=[False, True]
+).head(10)
+
+print("Top 10 Clientes de Elite (3+ categorias):")
 print(top_10_clientes)
 
-# IDENTIFICANDO A CATEGORIA DOMINANTE ENTRE OS CLIENTES DE ELITE
+#IDENTIFICANDO A CATEGORIA DOMINANTE ENTRE OS 10 CLIENTES DE ELITE
 df_vendas_elite = df_clientes_transacoes[df_clientes_transacoes['id_client'].isin(top_10_clientes['id_client'])]
-categoria_dominante = df_vendas_elite.groupby('actual_category')['qtd'].sum().sort_values(ascending=False)
-print(categoria_dominante.head(1))
 
+#SOMANDO A QUANTIDADE DE ITENS COMPRADOS POR CATEGORIA ENTRE OS CLIENTES DE ELITE
+categoria_dominante = df_vendas_elite.groupby('actual_category')['qtd'].sum().sort_values(ascending=False)
+
+print("\nCategoria Dominante entre os Elite:")
+print(categoria_dominante.head(1))
