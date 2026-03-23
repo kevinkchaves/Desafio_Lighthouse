@@ -9,7 +9,6 @@ SELECT
     v_final.categoria_normalizada,
     SUM(v_final.qtd) AS total_itens
 FROM (
-    -- 1. Unimos as vendas com produtos SEM DUPLICATAS
     SELECT 
         v.id_client,
         v.qtd,
@@ -29,7 +28,6 @@ FROM (
     ) AS p_unica ON v.id_product = p_unica.code
 ) AS v_final
 
--- Filtrando apenas o grupo dos Top 10
 WHERE v_final.id_client IN (
     SELECT id_client FROM (
         SELECT 
@@ -43,7 +41,7 @@ WHERE v_final.id_client IN (
             GROUP BY code
         ) AS p2 ON v2.id_product = p2.code
         GROUP BY v2.id_client
-        -- Critério dde pelo menos 3 categorias 
+
         HAVING COUNT(DISTINCT 
             CASE 
                 WHEN LOWER(REPLACE(p2.cat_raw, ' ', '')) LIKE '%anc%' OR LOWER(p2.cat_raw) LIKE '%cor%' THEN 'ancoragem'
