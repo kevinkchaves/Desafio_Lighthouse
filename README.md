@@ -13,7 +13,7 @@ O projeto busca solucionar o caos de dados que tem prejudicado a varejista náut
 
 ## Visualização do Projeto:
 
-- Dashboard: Streamlit 
+- Dashboard: Link - **https://desafio-lighthouse-lhnautical.streamlit.app/**
 - Notebook: Arquivo **Relatorio.ipynb** na pasta 'notebook'
 
 ## Estrutura dos Soluções:
